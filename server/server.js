@@ -41,6 +41,7 @@ io.on('connection', (socket) =>{
 
         if (user && isRealString(message.text)) {
             io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
+            callback();
         }
 
     });
